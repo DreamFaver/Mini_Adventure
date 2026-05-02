@@ -13,11 +13,11 @@
             "state": {
               "type": "canvas",
               "state": {
-                "file": "AshDeal/Main Canvas.canvas",
+                "file": "Ashdeal/Main Canvas.canvas",
                 "viewState": {
-                  "x": -891,
-                  "y": -327,
-                  "zoom": 0
+                  "x": -1380,
+                  "y": -340,
+                  "zoom": -0.32427203535566174
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -188,9 +188,11 @@
   },
   "active": "22c3c3d57ff723e7",
   "lastOpenFiles": [
+    "Ashdeal/Primary Objectives.md",
+    "Ashdeal/Main Canvas.canvas",
+    "Main/Road Map.md",
     "AshDeal/Primary Objectives.md",
     "AshDeal/Main Canvas.canvas",
-    "Main/Road Map.md",
     "AshDeal/Untitled",
     "AshDeal/Main Road.md",
     "Main/Untitled.canvas",
