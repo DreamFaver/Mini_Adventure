@@ -2,10 +2,9 @@
 ---
 - 16 x 16 pixel size for player
 
-
 ---
 story line :
-player looking for an item in the  temple. must avoid traps and dangers. solve puzzles and find the valuable item.
+player looking for an item in the temple. must avoid traps and dangers. solve puzzles and find the valuable item.
 
 ---
 game mechanic :
