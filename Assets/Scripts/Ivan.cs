@@ -20,9 +20,16 @@ public class Ivan : MonoBehaviour
         moveDirection = moveAction.action.ReadValue<Vector2>();
         Debug.LogWarning(moveDirection);
     }
-
+    
     private void FixedUpdate()
     {
-        
+        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, rb.linearVelocity.y);
+
+        #region Flip sprite
+        if (moveDirection.x > 0)
+            transform.localScale = new Vector3(1, 1, 1);
+        else if (moveDirection.x < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        #endregion
     }
 }
