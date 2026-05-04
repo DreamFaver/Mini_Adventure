@@ -1,3 +1,4 @@
+using Unity.Android.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,11 +12,12 @@ public class Ivan : MonoBehaviour
     public InputActionReference moveAction;
     public InputActionReference interactAction;
 
-    //----------public-variables-upside-----private-variables-downside-----------
+    //----------public/private----------
 
     bool isAlive = true;
-    Vector2 moveDirection;
+    bool isGrabbing = false;
 
+    Vector2 moveDirection;
     GameObject nearbyMoveableObject = null;
     #endregion
 
@@ -26,7 +28,7 @@ public class Ivan : MonoBehaviour
         moveDirection = moveAction.action.ReadValue<Vector2>(); // Read move input
 
         if (interactAction.action.triggered) // triggered is true when the action state changes to being pressed
-            FindNearestObject(); // Finds the nearest object that is moveable
+            TryToGrabObject(); // Finds the nearest object that is moveable
     }
     
     private void FixedUpdate()
@@ -35,8 +37,8 @@ public class Ivan : MonoBehaviour
         FlipSprite();
     }
 
-    //-------------Functions---------------------------------------------------
-    
+    //----------Functions-----------------------------------------
+
     private void FlipSprite()
     {
         if (moveDirection.x > 0)
@@ -45,7 +47,28 @@ public class Ivan : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
     }
 
-    private void FindNearestObject()
+    #region Interaction with moveable objects
+    void TryToGrabObject()
+    {
+        if (!isGrabbing)
+        {
+            FindNearestObject(); // Puts the selected object in "nearbyMoveableObject"
+            if (nearbyMoveableObject)
+                GrabObject();
+        }
+    }
+
+    void GrabObject()
+    {
+        isGrabbing = true;
+    }
+    void ReleaseObject()
+    {
+        isGrabbing = false;
+        nearbyMoveableObject = null;
+    }
+
+    void FindNearestObject() // Finds the nearest object that is moveable
     {
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, interactionRange);
 
@@ -69,7 +92,7 @@ public class Ivan : MonoBehaviour
 
         nearbyMoveableObject = closestObject;
     }
-
+    #endregion
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
