@@ -1,4 +1,3 @@
-using Unity.Android.Types;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -29,6 +28,11 @@ public class Ivan : MonoBehaviour
 
         if (interactAction.action.triggered) // triggered is true when the action state changes to being pressed
             TryToGrabObject(); // Finds the nearest object that is moveable
+        if (isGrabbing && nearbyMoveableObject)
+        {
+            Vector3 newPosition = transform.position;
+            nearbyMoveableObject.transform.position = newPosition;
+        }
     }
     
     private void FixedUpdate()
@@ -56,6 +60,8 @@ public class Ivan : MonoBehaviour
             if (nearbyMoveableObject)
                 GrabObject();
         }
+        else if (isGrabbing)
+            MoveGrabbedObject();
     }
 
     void GrabObject()
@@ -66,6 +72,11 @@ public class Ivan : MonoBehaviour
     {
         isGrabbing = false;
         nearbyMoveableObject = null;
+    }
+
+    void MoveGrabbedObject()
+    {
+
     }
 
     void FindNearestObject() // Finds the nearest object that is moveable
