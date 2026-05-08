@@ -11,14 +11,17 @@
             "id": "22c3c3d57ff723e7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Main/Road Map.md",
-                "mode": "source",
-                "source": false
+                "file": "Ashdeal/Main Canvas.canvas",
+                "viewState": {
+                  "x": -945,
+                  "y": -402,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "Road Map"
+              "icon": "lucide-layout-dashboard",
+              "title": "Main Canvas"
             }
           }
         ]
@@ -185,8 +188,13 @@
   },
   "active": "22c3c3d57ff723e7",
   "lastOpenFiles": [
-    "Main/نقشه مسیر.md",
+    "Asset/Background_Tile.png",
     "Main/Road Map.md",
+    "Asset/Background_Tile.aseprite",
+    "Asset/Background Tile.png",
+    "Asset",
+    "As.md",
+    "Main/نقشه مسیر.md",
     "Ashdeal/Main Canvas.canvas",
     "Ashdeal/Primary Objectives.md",
     "AshDeal/Primary Objectives.md",

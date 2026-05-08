@@ -1,7 +1,8 @@
 {
 	"nodes":[
 		{"id":"4271f5ef3a229fce","type":"file","file":"Main/Road Map.md","x":-1580,"y":-760,"width":400,"height":840,"color":"2"},
-		{"id":"a8dd2cc63ee6216d","x":-1160,"y":-760,"width":340,"height":480,"type":"text","text":"## Achieved Objectives\n\n"}
+		{"id":"a8dd2cc63ee6216d","type":"text","text":"## Achieved Objectives\n\n","x":-1160,"y":-760,"width":340,"height":480},
+		{"id":"678db20321439aa8","x":-1160,"y":-240,"width":400,"height":360,"type":"file","file":"Asset/Background_Tile.png"}
 	],
 	"edges":[]
 }
