@@ -4,7 +4,8 @@ using UnityEngine.InputSystem;
 public class Ivan : MonoBehaviour
 {
     #region Variables
-    public float moveSpeed = 0f;
+    public float normalMoveSpeed = 0f;
+    public float grabMoveSpeed = 0f;
     public float interactionRange = 0f;
     [Space(5)]
     public Rigidbody2D rb;
@@ -13,32 +14,41 @@ public class Ivan : MonoBehaviour
 
     //----------public/private----------
 
-    bool isAlive = true;
-    bool isGrabbing = false;
+    private bool isAlive = true;
+    private bool isGrabbing = false;
+    private float currentMoveSpeed;
 
-    Vector2 moveDirection;
-    GameObject nearbyMoveableObject = null;
+    private Vector2 moveDirection;
+    private Vector3 offset;
+    private GameObject grabbedObject;
     #endregion
 
     private void Update()
     {
         if (!isAlive) return;
+        currentMoveSpeed = isGrabbing ? grabMoveSpeed : normalMoveSpeed;
 
         moveDirection = moveAction.action.ReadValue<Vector2>(); // Read move input
 
-        if (interactAction.action.triggered) // triggered is true when the action state changes to being pressed
-            TryToGrabObject(); // Finds the nearest object that is moveable
-        if (isGrabbing && nearbyMoveableObject)
+        if (interactAction.action.IsPressed()) // triggered is true when the action state changes to being pressed
+            TryToGrabObject();
+        else if (isGrabbing) // release the object if the button is not being held
         {
-            Vector3 newPosition = transform.position;
-            nearbyMoveableObject.transform.position = newPosition;
+            isGrabbing = false;
+            grabbedObject = null;
         }
     }
-    
+
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(moveDirection.x * currentMoveSpeed, rb.linearVelocity.y);
         FlipSprite();
+
+        if (isGrabbing && grabbedObject) // Move the object if it's grabbed
+        {
+            Vector3 newPosition = transform.position + offset;
+            grabbedObject.transform.position = newPosition;
+        }
     }
 
     //----------Functions-----------------------------------------
@@ -57,26 +67,7 @@ public class Ivan : MonoBehaviour
         if (!isGrabbing)
         {
             FindNearestObject(); // Puts the selected object in "nearbyMoveableObject"
-            if (nearbyMoveableObject)
-                GrabObject();
         }
-        else if (isGrabbing)
-            MoveGrabbedObject();
-    }
-
-    void GrabObject()
-    {
-        isGrabbing = true;
-    }
-    void ReleaseObject()
-    {
-        isGrabbing = false;
-        nearbyMoveableObject = null;
-    }
-
-    void MoveGrabbedObject()
-    {
-
     }
 
     void FindNearestObject() // Finds the nearest object that is moveable
@@ -101,9 +92,15 @@ public class Ivan : MonoBehaviour
             }
         }
 
-        nearbyMoveableObject = closestObject;
+        grabbedObject = closestObject;
+        if (grabbedObject)
+        {
+            isGrabbing = true;
+            offset = grabbedObject.transform.position - transform.position;
+        }
     }
     #endregion
+
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
