@@ -1,0 +1,214 @@
+{
+  "main": {
+    "id": "1a71d2c297858855",
+    "type": "split",
+    "children": [
+      {
+        "id": "127211b7c3fa5e28",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "22c3c3d57ff723e7",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Ashdeal/Main Canvas.canvas",
+                "viewState": {
+                  "x": -945,
+                  "y": -402,
+                  "zoom": 0
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Main Canvas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b06130188954c300",
+    "type": "split",
+    "children": [
+      {
+        "id": "db768ff20bae7074",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ccb4aa5fd36bd562",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8ed42012f16aef69",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "3fb5363c12a53db1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "00045db3b7536731",
+    "type": "split",
+    "children": [
+      {
+        "id": "c7c899f5bdf921b6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0f3133f333322840",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "AshDeal/Main Canvas.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Main Canvas"
+            }
+          },
+          {
+            "id": "a624802ff0ce1828",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "AshDeal/Main Canvas.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Main Canvas"
+            }
+          },
+          {
+            "id": "b36f2368596f33e7",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3c0f211db310f05e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "b2b299a6a49051d2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "AshDeal/Main Canvas.canvas",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Main Canvas"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "22c3c3d57ff723e7",
+  "lastOpenFiles": [
+    "Asset/Background_Tile.png",
+    "Main/Road Map.md",
+    "Asset/Background_Tile.aseprite",
+    "Asset/Background Tile.png",
+    "Asset",
+    "As.md",
+    "Main/نقشه مسیر.md",
+    "Ashdeal/Main Canvas.canvas",
+    "Ashdeal/Primary Objectives.md",
+    "AshDeal/Primary Objectives.md",
+    "AshDeal/Main Canvas.canvas",
+    "AshDeal/Untitled",
+    "AshDeal/Main Road.md",
+    "Main/Untitled.canvas",
+    "AshDeal",
+    "Untitled.canvas",
+    "2026-05-02.md",
+    "Welcome.md",
+    "Main",
+    "Emam",
+    "Ashdeal",
+    "Garry"
+  ]
+}

@@ -777,14 +777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca6f537ed829c34cb6f68bc882d895c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ivan
-<<<<<<< Updated upstream
   moveSpeed: 3.4
   interactionRange: 0.35
-=======
-  normalMoveSpeed: 3
-  grabMoveSpeed: 1
-  interactionRange: 0.1
->>>>>>> Stashed changes
   rb: {fileID: 1738403630}
   moveAction: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   interactAction: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
