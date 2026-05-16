@@ -7,16 +7,31 @@ public class Ivan : MonoBehaviour
     public float normalMoveSpeed = 0f;
     public float grabMoveSpeed = 0f;
     public float interactionRange = 0f;
+
     [Space(5)]
     public Rigidbody2D rb;
     public InputActionReference moveAction;
     public InputActionReference interactAction;
 
+    [Header("Animation")]
+    [SerializeField] private Animator Anim;
+    [SerializeField] private PlayerState AnimState;
+
+    public bool isAlive = true;
+
     //----------public/private----------
 
-    private bool isAlive = true;
     private bool isGrabbing = false;
     private float currentMoveSpeed;
+
+    private enum PlayerState : byte
+    {
+        Idle,
+        Jog,
+        GrabIdle,
+        Grab,
+        None
+    }
 
     private Vector2 moveDirection;
     private Vector3 offset;
@@ -37,6 +52,7 @@ public class Ivan : MonoBehaviour
             isGrabbing = false;
             grabbedObject = null;
         }
+        SwitchState();
     }
 
     private void FixedUpdate()
@@ -52,7 +68,40 @@ public class Ivan : MonoBehaviour
     }
 
     //----------Functions-----------------------------------------
+    #region Animations
+    private void SwitchState()
+    {
+        if (moveDirection.magnitude > 0 && !isGrabbing)
+            AnimState = PlayerState.Jog;
+        if (moveDirection.magnitude == 0 && !isGrabbing)
+            AnimState = PlayerState.Idle;
+        if (moveDirection.magnitude > 0 && isGrabbing)
+            AnimState = PlayerState.Grab;
+        if (moveDirection.magnitude == 0 && isGrabbing)
+            AnimState = PlayerState.GrabIdle;
 
+        ApplyAnimation(AnimState);
+    }
+    private void ApplyAnimation(PlayerState _State)
+    {
+        switch(_State)
+        {
+            case PlayerState.Idle: Anim.Play("Idle"); 
+                break;
+            case PlayerState.Jog:
+                Anim.Play("Jog");
+                break;
+            case PlayerState.GrabIdle:
+                Anim.Play("Grab Idle");
+                break;
+            case PlayerState.Grab:
+                Anim.Play("Grab Walk");
+                break;
+            default: Anim.Play("Idle");
+                break;
+        }
+    }
+    #endregion
     private void FlipSprite()
     {
         if (moveDirection.x > 0)
